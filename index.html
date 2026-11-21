@@ -4,54 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>natercraft.id — Natural Earth Craft.Id | Gelang Benang Singkawang</title>
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/config.js"></script>
+
     <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        earth: {
-                            cream: '#FAF7F2',
-                            beige: '#F1EBE1',
-                            sand: '#E4DACB',
-                            wood: '#5C3D28',
-                            woodDark: '#3E2718',
-                            moss: '#4A634E',
-                            mossLight: '#E7EFE8',
-                            maroon: '#6E262C',
-                            charcoal: '#1F1D1B',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #FAF7F2; }
-        ::-webkit-scrollbar-thumb { background: #CFC3B0; border-radius: 9999px; }
-        ::-webkit-scrollbar-thumb:hover { background: #5C3D28; }
-        .glass-header {
-            background: rgba(250, 247, 242, 0.9);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .ceramic-shadow {
-            box-shadow: 0 12px 30px -10px rgba(62, 39, 24, 0.14), inset 0 2px 4px rgba(255, 255, 255, 0.9);
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-earth-cream text-earth-charcoal font-sans antialiased selection:bg-earth-mossLight selection:text-earth-charcoal overflow-x-hidden">
 
@@ -64,15 +31,9 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logo Anyaman 'N' Persis Profil IG @natercraft.id -->
                 <a href="#beranda" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 rounded-full bg-earth-beige border-2 border-earth-sand ceramic-shadow flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform">
-                        <!-- SVG Anyaman Huruf N -->
-                        <svg viewBox="0 0 64 64" class="w-9 h-9">
-                            <circle cx="32" cy="32" r="28" fill="#F4EFE6" stroke="#DFD4C3" stroke-width="1.5"/>
-                            <!-- Jalur Anyaman Tali N -->
-                            <path d="M18 47 L18 17 C18 15 21 15 22 17 L42 47 C43 49 46 49 46 47 L46 17" fill="none" stroke="#8C5B3C" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M18 47 L18 17 C18 15 21 15 22 17 L42 47 C43 49 46 49 46 47 L46 17" fill="none" stroke="#C69B7B" stroke-width="1.6" stroke-dasharray="2.5 2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M15 47 L21 47 M43 17 L49 17" stroke="#5C3D28" stroke-width="2.5" stroke-linecap="round"/>
-                        </svg>
+                    <!-- Ubah w-12 h-12 menjadi w-14 h-14 (atau w-16 h-16 jika ingin lebih besar lagi) -->
+                    <div class="w-16 h-16 sm:w-16 sm:h-16 rounded-full bg-earth-beige border-2 border-earth-sand ceramic-shadow flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform shrink-0">
+                        <img src="assets/img/logo.png" alt="Logo Natercraft.id" class="w-full h-full object-cover">
                     </div>
                     <div>
                         <div class="flex items-center gap-1.5">
@@ -140,7 +101,7 @@
                     </div>
 
                     <p class="text-earth-charcoal/80 text-sm sm:text-base leading-relaxed max-w-xl mx-auto lg:mx-0">
-                        Setiap simpul gelang <strong>@natercraft.id</strong> dirajut manual satu per satu di Singkawang menggunakan benang katun lembut berkualitas. Pilih seri <em>Daisy Chain</em>, <em>Spiral Twist</em>, hingga <em>Chevron</em>, atau padukan sendiri warna favoritmu.
+                        Setiap simpul gelang <strong>@natercraft.id</strong> dirajut manual satu per satu di Singkawang menggunakan benang katun lembut berkualitas. Pilih seri <em>Daisy Chain</em>, <em>Spiral Twist</em>, hingga <em>chevron</em>, atau padukan sendiri warna favoritmu.
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
@@ -162,72 +123,83 @@
                     </div>
                 </div>
 
-                <!-- Right Showcase: 3 Gaya Foto Khas Feed @natercraft.id -->
+                <!-- Right Showcase: Tetap 3 Kartu Asimetris dengan Slide untuk 4 Produk -->
                 <div class="lg:col-span-6">
                     <div class="grid grid-cols-12 gap-4 items-stretch">
-                        <!-- Card 1: Gaya Piring Keramik Putih Minimalis -->
-                        <div class="col-span-7 bg-white rounded-3xl p-5 border border-earth-sand ceramic-shadow flex flex-col justify-between">
+                        
+                        <!-- Card 1 (Kiri Besar): Slider 4 Produk Daisy Chain Series -->
+                        <div class="col-span-7 bg-white rounded-3xl p-5 border border-earth-sand ceramic-shadow flex flex-col justify-between relative">
                             <div class="flex items-center justify-between text-[11px] font-semibold text-earth-wood mb-2">
                                 <span class="px-2.5 py-0.5 rounded-full bg-earth-beige">Daisy Chain Series</span>
-                                <span>Best Seller</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-earth-beige">Best Seller</span>
                             </div>
-                            <!-- SVG Gelang di atas piring keramik putih -->
-                            <div class="aspect-square rounded-2xl bg-[#F4F1EC] flex items-center justify-center p-4 relative overflow-hidden">
-                                <svg viewBox="0 0 220 220" class="w-full h-full drop-shadow-md">
-                                    <!-- Piring Keramik Putih -->
-                                    <circle cx="110" cy="110" r="95" fill="#FFFFFF" stroke="#E5DFD5" stroke-width="3"/>
-                                    <circle cx="110" cy="110" r="76" fill="#FAF9F6" stroke="#EFECE6" stroke-width="1.5"/>
-                                    <!-- Tali Serut Atas -->
-                                    <path d="M85 45 L55 38 M135 45 L165 38" stroke="#6E262C" stroke-width="5" stroke-linecap="round"/>
-                                    <rect x="92" y="39" width="36" height="10" rx="5" fill="#1F1D1B"/>
-                                    <!-- Lingkar Gelang Hitam -->
-                                    <circle cx="110" cy="114" r="56" fill="none" stroke="#1F1D1B" stroke-width="8"/>
-                                    <!-- Bunga Daisy Merah & Hitam di sekeliling -->
-                                    <g id="hero-daisies"></g>
-                                </svg>
+
+                            <!-- Wadah Gambar Slider (Klik untuk Zoom) -->
+                            <div class="aspect-square rounded-2xl bg-[#F4F1EC] relative overflow-hidden group">
+                                <img id="hero-slide-img"
+                                    onclick="openCurrentHeroZoom()"
+                                    src="assets/img/products/daisy-1.jpg"
+                                    alt="Daisy Chain Series"
+                                    class="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-all duration-300">
+
+                                <!-- Tombol Panah Kiri & Kanan --> <!--
+                                <button type="button" onclick="prevHeroSlide(event)" aria-label="Produk Sebelumnya"
+                                        class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-earth-charcoal shadow-md flex items-center justify-center transition-all">
+                                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                                </button>
+                                <button type="button" onclick="nextHeroSlide(event)" aria-label="Produk Berikutnya"
+                                        class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-earth-charcoal shadow-md flex items-center justify-center transition-all">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                </button> -->
+
+                                <!-- Badge Petunjuk Zoom -->
+                                <button type="button" onclick="openCurrentHeroZoom()"
+                                        class="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-full bg-black/60 text-white text-[10px] font-medium flex items-center gap-1 backdrop-blur-2xs">
+                                    <i data-lucide="zoom-in" class="w-3 h-3"></i>
+                                    <span>Zoom</span>
+                                      <span id="hero-slide-counter">1 / 4</span>
+                                </button>
                             </div>
-                            <div class="pt-3 flex items-center justify-between">
+
+                            <!-- Titik Indikator Slide (4 Titik) -->
+                            <div id="hero-slide-dots" class="flex items-center justify-center gap-1.5 pt-3"></div>
+
+                            <!-- Info Produk Aktif -->
+                            <div class="pt-2.5 flex items-center justify-between gap-2">
                                 <div>
-                                    <p class="font-serif text-lg font-bold text-earth-charcoal leading-tight">Crimson Noir Daisy</p>
-                                    <p class="text-xs text-earth-wood">Hitam • Merah Maroon • Adjustable</p>
+                                    <p id="hero-slide-title" class="font-serif text-lg font-bold text-earth-charcoal leading-tight">Daisy Chain Brown</p>
+                                    <p id="hero-slide-sub" class="text-xs text-earth-wood">Cokelat •  Cream • Adjustable</p>
                                 </div>
-                                <span class="text-xs font-bold px-3 py-1.5 rounded-full bg-earth-mossLight text-earth-moss">Rp 18.000</span>
+                                <span id="hero-slide-price" class="text-xs font-bold px-3 py-1.5 rounded-full bg-earth-mossLight text-earth-moss shrink-0">Rp 20.000</span>
                             </div>
                         </div>
 
-                        <!-- Right Column Stacked 2 Styles -->
+                        <!-- Right Column Stacked 2 Styles (Tetap Cantik Seperti Awal) -->
                         <div class="col-span-5 flex flex-col gap-4">
-                            <!-- Card 2: Gaya Batu Berlumut -->
-                            <div class="flex-1 rounded-3xl p-4 bg-[#2C332B] text-earth-cream border border-earth-moss/40 shadow-md flex flex-col justify-between">
-                                <span class="text-[10px] uppercase tracking-wider text-green-200/80 font-semibold">Forest Moss Edition</span>
-                                <div class="my-2 flex items-center justify-center">
-                                    <svg viewBox="0 0 140 100" class="w-full h-24">
-                                        <!-- Tekstur batu gelap -->
-                                        <ellipse cx="70" cy="78" rx="58" ry="14" fill="#1D221C"/>
-                                        <!-- Gelang Hijau Kuning -->
-                                        <ellipse cx="70" cy="52" rx="42" ry="26" fill="none" stroke="#4A634E" stroke-width="7"/>
-                                        <circle cx="38" cy="64" r="6" fill="#EAB308"/><circle cx="38" cy="64" r="2.2" fill="#4A634E"/>
-                                        <circle cx="58" cy="75" r="6" fill="#EAB308"/><circle cx="58" cy="75" r="2.2" fill="#4A634E"/>
-                                        <circle cx="82" cy="75" r="6" fill="#EAB308"/><circle cx="82" cy="75" r="2.2" fill="#4A634E"/>
-                                        <circle cx="102" cy="64" r="6" fill="#EAB308"/><circle cx="102" cy="64" r="2.2" fill="#4A634E"/>
-                                    </svg>
+                            <!-- Card 2: Gaya Batu Berlumut (Bisa Klik Zoom) -->
+                            <div onclick="openHeroZoom('assets/img/products/csf_red.jpg', 'Candy Stripe Friendship Bracelet Pattern', 'Candy Stripe Friendship Edition • Rp 18.000')"
+                                class="cursor-pointer flex-1 rounded-3xl p-4 bg-[#2C332B] text-earth-cream border border-earth-moss/40 shadow-md flex flex-col justify-between group">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[10px] tracking-wider text-green-200/80 font-semibold">Candy Stripe Friendship Edition</span>
+                                    <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-green-200/70"></i>
                                 </div>
-                                <p class="font-serif text-sm font-bold leading-tight">Daisy Forest Lime</p>
+                                <div class="my-2 h-24 rounded-xl overflow-hidden bg-[#1D221C]">
+                                    <img src="assets/img/products/csf_red.jpg" alt="Candy Stripe Friendship Bracelet Pattern" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <p class="font-serif text-sm font-bold leading-tight">Candy Stripe Friendship Bracelet Pattern</p>
                             </div>
 
-                            <!-- Card 3: Gaya Serat Kayu Tua -->
-                            <div class="flex-1 rounded-3xl p-4 bg-[#4A3525] text-earth-cream border border-earth-wood shadow-md flex flex-col justify-between">
-                                <span class="text-[10px] uppercase tracking-wider text-amber-200/80 font-semibold">Wood Grain Series</span>
-                                <div class="my-2 flex items-center justify-center">
-                                    <svg viewBox="0 0 140 100" class="w-full h-24">
-                                        <!-- Serat Kayu -->
-                                        <path d="M10 30 Q70 20 130 32 M10 70 Q70 82 130 68" stroke="#362417" stroke-width="2" fill="none"/>
-                                        <!-- Gelang Chevron Coklat Hitam -->
-                                        <ellipse cx="70" cy="50" rx="42" ry="25" fill="none" stroke="#1F1D1B" stroke-width="8"/>
-                                        <ellipse cx="70" cy="50" rx="42" ry="25" fill="none" stroke="#C59B6D" stroke-width="4" stroke-dasharray="6 6"/>
-                                    </svg>
+                            <!-- Card 3: Gaya Serat Kayu Tua (Bisa Klik Zoom) -->
+                            <div onclick="openHeroZoom('assets/img/products/cls_red.jpg', 'Classic Bracelet Pattern', 'Classic Series • Rp 20.000')"
+                                class="cursor-pointer flex-1 rounded-3xl p-4 bg-[#4A3525] text-earth-cream border border-earth-wood shadow-md flex flex-col justify-between group">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[10px] tracking-wider text-amber-200/80 font-semibold">Classic Series</span>
+                                    <i data-lucide="zoom-in" class="w-3.5 h-3.5 text-amber-200/70"></i>
                                 </div>
-                                <p class="font-serif text-sm font-bold leading-tight">Chevron Earth Wood</p>
+                                <div class="my-2 h-24 rounded-xl overflow-hidden bg-[#362417]">
+                                    <img src="assets/img/products/cls_red.jpg" alt="Classic Bracelet Pattern" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <p class="font-serif text-sm font-bold leading-tight">Classic Bracelet Pattern</p>
                             </div>
                         </div>
                     </div>
@@ -252,18 +224,19 @@
             <button onclick="filterCatalog('Daisy Chain Series')" data-cat="Daisy Chain Series" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-earth-beige text-earth-charcoal hover:bg-earth-sand transition-all">
                 Daisy Chain Series
             </button>
-            <button onclick="filterCatalog('Spiral & Braided Twist')" data-cat="Spiral & Braided Twist" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-earth-beige text-earth-charcoal hover:bg-earth-sand transition-all">
-                Spiral & Braided Twist
+            <button onclick="filterCatalog('Flower Knot Series')" data-cat="Flower Knot Series" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-earth-beige text-earth-charcoal hover:bg-earth-sand transition-all">
+                Flower Knot Series
             </button>
-            <button onclick="filterCatalog('Chevron & Classic')" data-cat="Chevron & Classic" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-earth-beige text-earth-charcoal hover:bg-earth-sand transition-all">
-                Chevron & Classic
+            <button onclick="filterCatalog('Candy Straircase Series')" data-cat="Candy Straircase Series" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-earth-beige text-earth-charcoal hover:bg-earth-sand transition-all">
+                Candy Straircase Series
+            </button>
+            <button onclick="filterCatalog('Caterpillar Series')" data-cat="Caterpillar Series" class="cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-earth-beige text-earth-charcoal hover:bg-earth-sand transition-all">
+                Caterpillar Series
             </button>
         </div>
 
         <!-- Product Grid -->
-        <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Diisi otomatis via JavaScript -->
-        </div>
+        <div id="catalog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
     </section>
 
     <!-- 4. STUDIO CUSTOM REQUEST WARNA BENANG -->
@@ -286,10 +259,8 @@
                     <!-- Ceramic Plate & Dynamic Bracelet SVG -->
                     <div class="my-6 w-64 h-64 sm:w-72 sm:h-72 relative flex items-center justify-center">
                         <svg id="custom-bracelet-svg" viewBox="0 0 260 260" class="w-full h-full drop-shadow-md">
-                            <!-- Piring Keramik Putih -->
                             <circle cx="130" cy="130" r="118" fill="#FFFFFF" stroke="#E2D9C8" stroke-width="3"/>
                             <circle cx="130" cy="130" r="96" fill="#FBF9F5" stroke="#EFE8DC" stroke-width="1.5"/>
-                            <!-- Tempat render pola gelang dinamis -->
                             <g id="custom-svg-layer"></g>
                         </svg>
                     </div>
@@ -314,8 +285,8 @@
                                 <p class="font-bold text-sm text-earth-charcoal">Spiral Twist</p>
                                 <p class="text-xs text-earth-wood mt-0.5">Kepang lilit 3 warna • Rp 15.000</p>
                             </button>
-                            <button type="button" onclick="setCustomPattern('Chevron', 20000)" id="pat-chevron" class="pat-btn p-3.5 rounded-2xl border border-earth-sand bg-white hover:border-earth-wood text-left transition-all">
-                                <p class="font-bold text-sm text-earth-charcoal">Chevron</p>
+                            <button type="button" onclick="setCustomPattern('chevron', 20000)" id="pat-chevron" class="pat-btn p-3.5 rounded-2xl border border-earth-sand bg-white hover:border-earth-wood text-left transition-all">
+                                <p class="font-bold text-sm text-earth-charcoal">chevron</p>
                                 <p class="text-xs text-earth-wood mt-0.5">Anyaman panah V • Rp 20.000</p>
                             </button>
                         </div>
@@ -332,10 +303,7 @@
                             </div>
                         </div>
 
-                        <!-- Swatches 12 Warna -->
-                        <div id="thread-palette-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5">
-                            <!-- Diisi via JS -->
-                        </div>
+                        <div id="thread-palette-grid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5"></div>
                     </div>
 
                     <!-- Step 3: Ukuran & Catatan -->
@@ -421,9 +389,7 @@
                 </div>
                 <span class="text-xs font-semibold px-3.5 py-1.5 rounded-full bg-earth-mossLight text-earth-moss self-start">Ready Stock Semua Warna</span>
             </div>
-            <div id="highlight-spools-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                <!-- Diisi via JS -->
-            </div>
+            <div id="highlight-spools-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"></div>
         </div>
 
         <!-- Tab 2: Cara Mengukur -->
@@ -543,7 +509,6 @@
                             <span class="text-xs text-earth-wood font-medium">Singkawang, Kalbar</span>
                         </div>
 
-                        <!-- Ilustrasi Kemasan & Kartu Thank You khas Natercraft -->
                         <div class="p-5 rounded-2xl bg-earth-beige border border-earth-sand text-center space-y-2">
                             <p class="font-serif text-2xl font-bold text-earth-wood italic">"Thank You for Supporting Small Handmade Business"</p>
                             <p class="text-xs text-earth-charcoal/80">Setiap paket gelang dikemas dalam plastik klip pelindung + kartu display <strong>Natercraft.id</strong> yang estetik — cocok untuk dipakai sendiri maupun kado sahabat & pasangan.</p>
@@ -584,7 +549,7 @@
                         <i data-lucide="instagram" class="w-4 h-4"></i>
                         <span>DM Instagram @natercraft.id</span>
                     </a>
-                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="px-5 py-3 rounded-full bg-earth-moss hover:bg-[#3B513E] text-white text-xs sm:text-sm font-semibold flex items-center gap-2 shadow-sm transition-all">
+                    <a href="https://wa.me/6287728962779" target="_blank" rel="noopener" class="px-5 py-3 rounded-full bg-earth-moss hover:bg-[#3B513E] text-white text-xs sm:text-sm font-semibold flex items-center gap-2 shadow-sm transition-all">
                         <i data-lucide="message-circle" class="w-4 h-4"></i>
                         <span>Chat WhatsApp</span>
                     </a>
@@ -613,8 +578,9 @@
                     </button>
                 </div>
 
-                <!-- Preview SVG besar -->
-                <div id="m-svg-box" class="w-48 h-48 mx-auto rounded-2xl bg-white border border-earth-sand p-3 flex items-center justify-center"></div>
+                <!-- <div id="m-svg-box" class="w-48 h-48 mx-auto rounded-2xl bg-white border border-earth-sand p-3 flex items-center justify-center"></div> -->
+                <!-- Ubah w-48 h-48 menjadi w-64 h-64 sm:w-72 sm:h-72 dan p-3 menjadi p-2 -->
+                <div id="m-svg-box" class="w-64 h-64 sm:w-72 sm:h-72 mx-auto rounded-2xl bg-[#F4F1EC] border border-earth-sand p-2 flex items-center justify-center overflow-hidden"></div>
 
                 <p id="m-desc" class="text-sm text-earth-charcoal/85 leading-relaxed"></p>
 
@@ -634,7 +600,6 @@
     <!-- SLIDE-OVER CART DRAWER -->
     <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 z-50 hidden bg-black/50 backdrop-blur-2xs"></div>
     <aside id="cart-drawer" class="fixed top-0 right-0 z-50 h-full w-full max-w-md bg-earth-cream shadow-2xl border-l border-earth-sand transform translate-x-full transition-transform duration-300 flex flex-col">
-        <!-- Header -->
         <div class="p-5 sm:p-6 bg-earth-beige border-b border-earth-sand flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <i data-lucide="shopping-bag" class="w-5 h-5 text-earth-wood"></i>
@@ -645,10 +610,8 @@
             </button>
         </div>
 
-        <!-- Cart Items -->
         <div id="cart-list" class="flex-1 overflow-y-auto p-5 space-y-3.5"></div>
 
-        <!-- Footer Form & DM IG / WA Buttons -->
         <div class="p-5 sm:p-6 bg-earth-beige/90 border-t border-earth-sand space-y-3.5">
             <div class="flex items-center justify-between">
                 <span class="text-sm font-semibold text-earth-charcoal">Total Estimasi</span>
@@ -661,13 +624,11 @@
                 <input type="text" id="order-notes" placeholder="Catatan tambahan (Opsional)" class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-earth-sand text-xs sm:text-sm focus:outline-none focus:border-earth-wood">
             </div>
 
-            <!-- Primary CTA: Salin Format & Buka DM Instagram @natercraft.id -->
             <button onclick="checkoutInstagramDM()" class="w-full py-3.5 rounded-full bg-earth-charcoal hover:bg-black text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2">
                 <i data-lucide="instagram" class="w-4 h-4"></i>
                 <span>Salin Format & Buka DM @natercraft.id</span>
             </button>
 
-            <!-- Secondary CTA: WhatsApp -->
             <button onclick="checkoutWhatsApp()" class="w-full py-3 rounded-full bg-earth-moss hover:bg-[#3B513E] text-white font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-2">
                 <i data-lucide="message-circle" class="w-4 h-4"></i>
                 <span>Kirim Pesanan via WhatsApp</span>
@@ -675,697 +636,7 @@
         </div>
     </aside>
 
-    <script>
-        // --- 12 PALET WARNA BENANG ASLI NATERCRAFT ---
-        const threadColors = [
-            { name: 'Hitam Arang', hex: '#1F1D1B' },
-            { name: 'Maroon Gelap', hex: '#6E262C' },
-            { name: 'Merah Cabai', hex: '#C82829' },
-            { name: 'Coklat Kayu', hex: '#5C3D28' },
-            { name: 'Krem Natural', hex: '#E8DEC8' },
-            { name: 'Putih Bersih', hex: '#F9F8F6' },
-            { name: 'Pink Pastel', hex: '#F2A6B8' },
-            { name: 'Kuning Emas', hex: '#EAB308' },
-            { name: 'Hijau Lumut', hex: '#4A634E' },
-            { name: 'Biru Langit', hex: '#5BA4CF' },
-            { name: 'Biru Tosca', hex: '#2D8C8B' },
-            { name: 'Abu-abu Batu', hex: '#7A7D7D' }
-        ];
-
-        // --- 10 KATALOG PRODUK SESUAI FEED ASLI @NATERCRAFT.ID ---
-        const catalogProducts = [
-            {
-                id: 'nc-01',
-                name: 'Daisy Chain Midnight Pink',
-                category: 'Daisy Chain Series',
-                price: 18000,
-                pattern: 'daisy',
-                colors: { base: '#1F1D1B', motif: '#F2A6B8', accent: '#F9F8F6' },
-                bgStyle: 'moss',
-                desc: 'Edisi ikonik pertama @natercraft.id. Tali dasar hitam pekat dipadukan deretan bunga daisy pink pastel dengan putik putih.'
-            },
-            {
-                id: 'nc-02',
-                name: 'Daisy Chain Ocean Wood',
-                category: 'Daisy Chain Series',
-                price: 18000,
-                pattern: 'daisy',
-                colors: { base: '#8B6240', motif: '#2D8C8B', accent: '#F9F8F6' },
-                bgStyle: 'stone',
-                desc: 'Perpaduan hangat tali benang coklat kayu dengan kelopak bunga daisy biru tosca cerah.'
-            },
-            {
-                id: 'nc-03',
-                name: 'Daisy Chain Forest Lime',
-                category: 'Daisy Chain Series',
-                price: 18000,
-                pattern: 'daisy',
-                colors: { base: '#4A634E', motif: '#EAB308', accent: '#4A634E' },
-                bgStyle: 'moss',
-                desc: 'Nuansa alam hijau daun segar berpadu kelopak bunga kuning cerah yang ceria untuk dipakai harian.'
-            },
-            {
-                id: 'nc-04',
-                name: 'Daisy Chain Crimson Noir',
-                category: 'Daisy Chain Series',
-                price: 18000,
-                pattern: 'daisy',
-                colors: { base: '#1F1D1B', motif: '#C82829', accent: '#1F1D1B' },
-                bgStyle: 'ceramic',
-                desc: 'Kontras elegan benang hitam dengan bunga daisy merah cabai dan tali serut merah maroon.'
-            },
-            {
-                id: 'nc-05',
-                name: 'Daisy Chain Soft Blossom',
-                category: 'Daisy Chain Series',
-                price: 18000,
-                pattern: 'daisy',
-                colors: { base: '#F5F2EB', motif: '#F2A6B8', accent: '#EAB308' },
-                bgStyle: 'stone',
-                desc: 'Tampilan lembut dan feminin dengan dasar benang putih bersih dan bunga sakura pink muda.'
-            },
-            {
-                id: 'nc-06',
-                name: 'Spiral Twist Maroon & Cream',
-                category: 'Spiral & Braided Twist',
-                price: 15000,
-                pattern: 'spiral',
-                colors: { base: '#6E262C', motif: '#E8DEC8', accent: '#6E262C' },
-                bgStyle: 'wood',
-                desc: 'Anyaman lilit spiral dua warna klasik merah maroon dan krem natural yang cocok untuk gelang couple.'
-            },
-            {
-                id: 'nc-07',
-                name: 'Spiral Twist Tri-Color Fire',
-                category: 'Spiral & Braided Twist',
-                price: 16000,
-                pattern: 'spiral',
-                colors: { base: '#C82829', motif: '#EAB308', accent: '#1F1D1B' },
-                bgStyle: 'stone',
-                desc: 'Kombinasi dinamis tiga warna merah, kuning emas, dan hitam dengan tekstur lilitan padat.'
-            },
-            {
-                id: 'nc-08',
-                name: 'Braided Sky & Noir',
-                category: 'Spiral & Braided Twist',
-                price: 16000,
-                pattern: 'spiral',
-                colors: { base: '#5BA4CF', motif: '#F9F8F6', accent: '#1F1D1B' },
-                bgStyle: 'ceramic',
-                desc: 'Perpaduan segar biru langit, putih bersih, dan hitam arang dengan simpul ujung rapi.'
-            },
-            {
-                id: 'nc-09',
-                name: 'Chevron Earth Brown & Black',
-                category: 'Chevron & Classic',
-                price: 20000,
-                pattern: 'chevron',
-                colors: { base: '#1F1D1B', motif: '#A97B50', accent: '#5C3D28' },
-                bgStyle: 'wood',
-                desc: 'Pola rajutan panah zig-zag (chevron) bernuansa coklat kayu dan hitam yang kokoh dan maskulin.'
-            },
-            {
-                id: 'nc-10',
-                name: 'Classic Solid Maroon & Earth',
-                category: 'Chevron & Classic',
-                price: 15000,
-                pattern: 'solid',
-                colors: { base: '#6E262C', motif: '#5C3D28', accent: '#1F1D1B' },
-                bgStyle: 'moss',
-                desc: 'Rajutan polos minimalis dengan tekstur kepang rapat dalam pilihan warna earth tone (Maroon, Brown, Black).'
-            }
-        ];
-
-        const availableSizes = ['XS (14cm)', 'S (15cm)', 'M (16cm)', 'L (17cm)', 'XL (18cm)', 'Adjustable'];
-
-        // --- STATE ---
-        let selectedCardSizes = {};
-        catalogProducts.forEach(p => selectedCardSizes[p.id] = 'M (16cm)');
-
-        let cart = [];
-        let customConfig = {
-            pattern: 'Daisy Chain',
-            price: 18000,
-            base: threadColors[0],   // Hitam Arang
-            motif: threadColors[6],  // Pink Pastel
-            accent: threadColors[5], // Putih Bersih
-            activeSlot: 'base',
-            size: 'M (16 cm)'
-        };
-
-        // --- HELPER FORMAT RUPIAH ---
-        function formatIDR(num) {
-            return 'Rp ' + num.toLocaleString('id-ID');
-        }
-
-        // --- HELPER RENDER SVG GELANG ---
-        function generateBraceletSVG(pattern, colors, bgStyle = 'ceramic') {
-            let bgMarkup = '';
-            if (bgStyle === 'ceramic') {
-                bgMarkup = `<circle cx="100" cy="100" r="88" fill="#FFFFFF" stroke="#E5DEC9" stroke-width="2.5"/>
-                            <circle cx="100" cy="100" r="70" fill="#FAF8F4" stroke="#EFE9DD" stroke-width="1"/>`;
-            } else if (bgStyle === 'wood') {
-                bgMarkup = `<rect x="8" y="8" width="184" height="184" rx="24" fill="#4A3525"/>
-                            <path d="M12 45 Q100 32 188 48 M12 100 Q100 112 188 96 M12 155 Q100 142 188 158" stroke="#362417" stroke-width="2" fill="none"/>`;
-            } else if (bgStyle === 'moss') {
-                bgMarkup = `<rect x="8" y="8" width="184" height="184" rx="24" fill="#2A3229"/>
-                            <circle cx="45" cy="45" r="24" fill="#3B4D38" opacity="0.5"/>
-                            <circle cx="155" cy="150" r="30" fill="#3B4D38" opacity="0.45"/>`;
-            } else {
-                bgMarkup = `<rect x="8" y="8" width="184" height="184" rx="24" fill="#323130"/>
-                            <circle cx="60" cy="140" r="35" fill="#242322" opacity="0.6"/>`;
-            }
-
-            // Tali serut atas
-            const ties = `<path d="M78 38 L52 30 M122 38 L148 30" stroke="${colors.base}" stroke-width="4.5" stroke-linecap="round"/>
-                          <rect x="84" y="33" width="32" height="9" rx="4.5" fill="${colors.motif}"/>`;
-
-            let braceletBody = '';
-            if (pattern === 'daisy') {
-                braceletBody = `<circle cx="100" cy="104" r="52" fill="none" stroke="${colors.base}" stroke-width="7"/>`;
-                const angles = [35, 70, 105, 145, 215, 255, 290, 325];
-                angles.forEach(deg => {
-                    const rad = (deg * Math.PI) / 180;
-                    const cx = 100 + 52 * Math.cos(rad);
-                    const cy = 104 + 52 * Math.sin(rad);
-                    braceletBody += `
-                        <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="7.5" fill="${colors.motif}"/>
-                        <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="2.8" fill="${colors.accent}"/>
-                    `;
-                });
-            } else if (pattern === 'spiral') {
-                braceletBody = `
-                    <circle cx="100" cy="104" r="52" fill="none" stroke="${colors.base}" stroke-width="8.5"/>
-                    <circle cx="100" cy="104" r="52" fill="none" stroke="${colors.motif}" stroke-width="8.5" stroke-dasharray="9 18"/>
-                    <circle cx="100" cy="104" r="52" fill="none" stroke="${colors.accent}" stroke-width="8.5" stroke-dasharray="9 18" stroke-dashoffset="9"/>
-                `;
-            } else if (pattern === 'chevron') {
-                braceletBody = `
-                    <circle cx="100" cy="104" r="52" fill="none" stroke="${colors.base}" stroke-width="10"/>
-                    <circle cx="100" cy="104" r="52" fill="none" stroke="${colors.motif}" stroke-width="5" stroke-dasharray="6 6"/>
-                    <circle cx="100" cy="104" r="52" fill="none" stroke="${colors.accent}" stroke-width="2" stroke-dasharray="3 9"/>
-                `;
-            } else {
-                braceletBody = `
-                    <circle cx="100" cy="104" r="52" fill="none" stroke="${colors.base}" stroke-width="9"/>
-                    <circle cx="100" cy="104" r="52" fill="none" stroke="${colors.motif}" stroke-width="2.5" stroke-dasharray="4 4"/>
-                `;
-            }
-
-            return `<svg viewBox="0 0 200 200" class="w-full h-full">${bgMarkup}${ties}${braceletBody}</svg>`;
-        }
-
-        // --- RENDER HERO DAISIES ---
-        function renderHeroDaisies() {
-            const group = document.getElementById('hero-daisies');
-            if (!group) return;
-            const angles = [30, 65, 100, 140, 220, 260, 295, 330];
-            group.innerHTML = angles.map(deg => {
-                const rad = (deg * Math.PI) / 180;
-                const cx = 110 + 56 * Math.cos(rad);
-                const cy = 114 + 56 * Math.sin(rad);
-                return `
-                    <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="8.5" fill="#C82829"/>
-                    <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="3.2" fill="#1F1D1B"/>
-                `;
-            }).join('');
-        }
-
-        // --- RENDER KATALOG PRODUK ---
-        function renderCatalog(filter = 'Semua Koleksi') {
-            const grid = document.getElementById('catalog-grid');
-            const items = filter === 'Semua Koleksi'
-                ? catalogProducts
-                : catalogProducts.filter(p => p.category === filter);
-
-            grid.innerHTML = items.map(prod => {
-                const chosenSize = selectedCardSizes[prod.id] || 'M (16cm)';
-                return `
-                <div class="bg-white rounded-3xl border border-earth-sand overflow-hidden shadow-xs hover:shadow-lg transition-all flex flex-col justify-between group">
-                    <div>
-                        <div class="p-4 pb-0">
-                            <div class="aspect-square rounded-2xl overflow-hidden bg-earth-cream relative">
-                                ${generateBraceletSVG(prod.pattern, prod.colors, prod.bgStyle)}
-                                <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full bg-white/90 text-[10px] font-bold text-earth-wood shadow-2xs">
-                                    ${prod.category.replace(' Series', '')}
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="p-5 space-y-2.5">
-                            <h3 class="font-serif text-xl font-bold text-earth-charcoal leading-snug">${prod.name}</h3>
-                            <p class="text-xs text-earth-charcoal/75 line-clamp-2 leading-relaxed">${prod.desc}</p>
-                            <p class="text-base font-bold text-earth-wood">${formatIDR(prod.price)}</p>
-
-                            <!-- Pilihan Ukuran Cepat -->
-                            <div class="pt-1">
-                                <span class="text-[11px] font-semibold text-earth-charcoal/70 block mb-1.5">Pilih Ukuran:</span>
-                                <div class="flex flex-wrap gap-1.5">
-                                    ${['XS', 'S', 'M', 'L', 'XL', 'Adj'].map((shortLabel, idx) => {
-                                        const fullVal = availableSizes[idx];
-                                        const isActive = chosenSize === fullVal;
-                                        return `
-                                            <button type="button" onclick="selectProductSize('${prod.id}', '${fullVal}')"
-                                                class="px-2 py-1 rounded-lg text-[11px] font-bold transition-all ${isActive
-                                                    ? 'bg-earth-wood text-earth-cream'
-                                                    : 'bg-earth-beige text-earth-charcoal hover:bg-earth-sand'}">
-                                                ${shortLabel}
-                                            </button>
-                                        `;
-                                    }).join('')}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="px-5 pb-5 pt-1 flex items-center gap-2">
-                        <button type="button" onclick="addCatalogToCart('${prod.id}')" class="flex-1 py-2.5 px-3 rounded-xl bg-earth-wood hover:bg-earth-woodDark text-earth-cream text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
-                            <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-                            <span>Keranjang</span>
-                        </button>
-                        <button type="button" onclick="openDetailModal('${prod.id}')" class="py-2.5 px-3 rounded-xl bg-earth-beige hover:bg-earth-sand text-earth-charcoal text-xs font-semibold transition-colors">
-                            Detail
-                        </button>
-                    </div>
-                </div>
-                `;
-            }).join('');
-
-            lucide.createIcons();
-        }
-
-        function filterCatalog(category) {
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                if (btn.dataset.cat === category) {
-                    btn.className = 'cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-earth-wood text-earth-cream shadow-sm transition-all';
-                } else {
-                    btn.className = 'cat-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-earth-beige text-earth-charcoal hover:bg-earth-sand transition-all';
-                }
-            });
-            renderCatalog(category);
-        }
-
-        function selectProductSize(prodId, fullSize) {
-            selectedCardSizes[prodId] = fullSize;
-            const activeCat = document.querySelector('.cat-btn.bg-earth-wood')?.dataset.cat || 'Semua Koleksi';
-            renderCatalog(activeCat);
-        }
-
-        // --- MODAL DETAIL PRODUK ---
-        function openDetailModal(prodId) {
-            const prod = catalogProducts.find(p => p.id === prodId);
-            if (!prod) return;
-
-            document.getElementById('m-category').textContent = prod.category;
-            document.getElementById('m-name').textContent = prod.name;
-            document.getElementById('m-price').textContent = formatIDR(prod.price);
-            document.getElementById('m-desc').textContent = prod.desc;
-            document.getElementById('m-svg-box').innerHTML = generateBraceletSVG(prod.pattern, prod.colors, prod.bgStyle);
-
-            const renderModalSizes = () => {
-                const current = selectedCardSizes[prod.id];
-                document.getElementById('m-size-options').innerHTML = availableSizes.map(sz => `
-                    <button type="button" onclick="window.updateModalSize('${prod.id}', '${sz}')"
-                        class="px-3 py-1.5 rounded-xl text-xs font-bold border transition-all ${current === sz
-                            ? 'border-earth-wood bg-earth-wood text-earth-cream'
-                            : 'border-earth-sand bg-white text-earth-charcoal'}">
-                        ${sz}
-                    </button>
-                `).join('');
-            };
-
-            window.updateModalSize = (id, sz) => {
-                selectedCardSizes[id] = sz;
-                renderModalSizes();
-                const activeCat = document.querySelector('.cat-btn.bg-earth-wood')?.dataset.cat || 'Semua Koleksi';
-                renderCatalog(activeCat);
-            };
-
-            renderModalSizes();
-
-            document.getElementById('m-add-cart-btn').onclick = () => {
-                addCatalogToCart(prod.id);
-                closeDetailModal();
-            };
-
-            const modal = document.getElementById('detail-modal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeDetailModal() {
-            const modal = document.getElementById('detail-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        // --- STUDIO CUSTOM WARNA BENANG ---
-        function renderThreadPalette() {
-            const grid = document.getElementById('thread-palette-grid');
-            const activeColorHex = customConfig[customConfig.activeSlot].hex;
-
-            grid.innerHTML = threadColors.map(color => {
-                const isSelected = color.hex === activeColorHex;
-                return `
-                    <button type="button" onclick="pickThreadColor('${color.name}')"
-                        class="p-2.5 rounded-2xl border text-left transition-all flex flex-col items-center gap-1.5 ${isSelected
-                            ? 'border-2 border-earth-wood bg-earth-cream shadow-xs scale-[1.02]'
-                            : 'border-earth-sand bg-white hover:border-earth-wood/60'}">
-                        <span class="w-7 h-7 rounded-full border border-black/15 shadow-inner" style="background-color: ${color.hex};"></span>
-                        <span class="text-[11px] font-semibold text-earth-charcoal text-center leading-tight">${color.name}</span>
-                    </button>
-                `;
-            }).join('');
-        }
-
-        function setActiveColorSlot(slot) {
-            customConfig.activeSlot = slot;
-            ['base', 'motif', 'accent'].forEach(s => {
-                const btn = document.getElementById(`slot-${s}`);
-                if (s === slot) {
-                    btn.className = 'slot-tab px-3 py-1 rounded-full bg-earth-wood text-white transition-all';
-                } else {
-                    btn.className = 'slot-tab px-3 py-1 rounded-full text-earth-charcoal transition-all';
-                }
-            });
-            renderThreadPalette();
-        }
-
-        function pickThreadColor(colorName) {
-            const found = threadColors.find(c => c.name === colorName);
-            if (!found) return;
-            customConfig[customConfig.activeSlot] = found;
-            renderThreadPalette();
-            updateCustomPreview();
-        }
-
-        function setCustomPattern(patternName, price) {
-            customConfig.pattern = patternName;
-            customConfig.price = price;
-
-            const mapId = { 'Daisy Chain': 'pat-daisy', 'Spiral Twist': 'pat-spiral', 'Chevron': 'pat-chevron' };
-            Object.entries(mapId).forEach(([name, id]) => {
-                const el = document.getElementById(id);
-                if (name === patternName) {
-                    el.className = 'pat-btn p-3.5 rounded-2xl border-2 border-earth-wood bg-earth-cream text-left transition-all';
-                } else {
-                    el.className = 'pat-btn p-3.5 rounded-2xl border border-earth-sand bg-white hover:border-earth-wood text-left transition-all';
-                }
-            });
-
-            document.getElementById('custom-price-display').textContent = formatIDR(price);
-            updateCustomPreview();
-        }
-
-        function setCustomSize(sizeVal) {
-            customConfig.size = sizeVal;
-            document.getElementById('custom-size-pill').textContent = `Ukuran: ${sizeVal}`;
-        }
-
-        function updateCustomPreview() {
-            const layer = document.getElementById('custom-svg-layer');
-            const cBase = customConfig.base.hex;
-            const cMotif = customConfig.motif.hex;
-            const cAccent = customConfig.accent.hex;
-
-            let svgContent = `
-                <path d="M102 48 L68 38 M158 48 L192 38" stroke="${cBase}" stroke-width="5.5" stroke-linecap="round"/>
-                <rect x="110" y="42" width="40" height="11" rx="5.5" fill="${cMotif}"/>
-            `;
-
-            if (customConfig.pattern === 'Daisy Chain') {
-                svgContent += `<circle cx="130" cy="134" r="68" fill="none" stroke="${cBase}" stroke-width="9"/>`;
-                const angles = [30, 65, 100, 140, 220, 260, 295, 330];
-                angles.forEach(deg => {
-                    const rad = (deg * Math.PI) / 180;
-                    const cx = 130 + 68 * Math.cos(rad);
-                    const cy = 134 + 68 * Math.sin(rad);
-                    svgContent += `
-                        <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="10" fill="${cMotif}" stroke="rgba(0,0,0,0.08)" stroke-width="1"/>
-                        <circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="3.8" fill="${cAccent}"/>
-                    `;
-                });
-            } else if (customConfig.pattern === 'Spiral Twist') {
-                svgContent += `
-                    <circle cx="130" cy="134" r="68" fill="none" stroke="${cBase}" stroke-width="11"/>
-                    <circle cx="130" cy="134" r="68" fill="none" stroke="${cMotif}" stroke-width="11" stroke-dasharray="12 24"/>
-                    <circle cx="130" cy="134" r="68" fill="none" stroke="${cAccent}" stroke-width="11" stroke-dasharray="12 24" stroke-dashoffset="12"/>
-                `;
-            } else {
-                svgContent += `
-                    <circle cx="130" cy="134" r="68" fill="none" stroke="${cBase}" stroke-width="13"/>
-                    <circle cx="130" cy="134" r="68" fill="none" stroke="${cMotif}" stroke-width="6.5" stroke-dasharray="8 8"/>
-                    <circle cx="130" cy="134" r="68" fill="none" stroke="${cAccent}" stroke-width="2.5" stroke-dasharray="4 12"/>
-                `;
-            }
-
-            layer.innerHTML = svgContent;
-
-            document.getElementById('custom-recipe-text').textContent =
-                `Pola ${customConfig.pattern} • Dasar ${customConfig.base.name} • Motif ${customConfig.motif.name} • Aksen ${customConfig.accent.name}`;
-        }
-
-        function addCustomBraceletToCart() {
-            const note = document.getElementById('custom-note').value.trim();
-            const variantDesc = `Dasar: ${customConfig.base.name}, Motif: ${customConfig.motif.name}, Aksen: ${customConfig.accent.name}${note ? ` (${note})` : ''}`;
-            const key = `custom-${customConfig.pattern}-${variantDesc}-${customConfig.size}`;
-
-            const existing = cart.find(i => i.key === key);
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({
-                    key,
-                    name: `Custom ${customConfig.pattern}`,
-                    variant: variantDesc,
-                    size: customConfig.size,
-                    price: customConfig.price,
-                    qty: 1
-                });
-            }
-
-            updateCartDrawer();
-            showToast('Gelang Custom warna pilihanmu masuk keranjang!');
-        }
-
-        // --- PANDUAN HIGHLIGHTS ---
-        function renderHighlightSpools() {
-            const container = document.getElementById('highlight-spools-grid');
-            container.innerHTML = threadColors.map((c, idx) => `
-                <div class="p-4 rounded-2xl bg-earth-cream border border-earth-sand flex flex-col items-center text-center gap-2">
-                    <!-- SVG Gulungan Benang -->
-                    <svg viewBox="0 0 64 64" class="w-12 h-12">
-                        <rect x="14" y="8" width="36" height="6" rx="3" fill="#C8B69E"/>
-                        <rect x="18" y="14" width="28" height="36" rx="4" fill="${c.hex}" stroke="rgba(0,0,0,0.12)" stroke-width="1"/>
-                        <path d="M18 22 L46 26 M18 32 L46 36 M18 42 L46 46" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
-                        <rect x="14" y="50" width="36" height="6" rx="3" fill="#C8B69E"/>
-                    </svg>
-                    <div>
-                        <span class="text-[10px] font-bold text-earth-wood block">Kode #${String(idx + 1).padStart(2, '0')}</span>
-                        <p class="text-xs font-bold text-earth-charcoal">${c.name}</p>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function switchHighlightTab(tabName) {
-            ['warna', 'mengukur', 'ukuran'].forEach(name => {
-                const panel = document.getElementById(`hl-panel-${name}`);
-                const btn = document.getElementById(`hl-btn-${name}`);
-                const circle = btn.querySelector('div');
-                const label = btn.querySelector('span');
-
-                if (name === tabName) {
-                    panel.classList.remove('hidden');
-                    circle.className = 'w-16 h-16 sm:w-20 sm:h-20 rounded-full p-1 border-2 border-earth-wood bg-white shadow-sm transition-transform group-hover:scale-105';
-                    label.className = 'text-xs sm:text-sm font-bold text-earth-wood';
-                } else {
-                    panel.classList.add('hidden');
-                    circle.className = 'w-16 h-16 sm:w-20 sm:h-20 rounded-full p-1 border-2 border-earth-sand bg-white shadow-sm transition-transform group-hover:scale-105';
-                    label.className = 'text-xs sm:text-sm font-semibold text-earth-charcoal/75';
-                }
-            });
-        }
-
-        // --- KERANJANG & CHECKOUT DM IG / WHATSAPP ---
-        function addCatalogToCart(prodId) {
-            const prod = catalogProducts.find(p => p.id === prodId);
-            if (!prod) return;
-
-            const size = selectedCardSizes[prodId] || 'M (16cm)';
-            const key = `${prod.id}-${size}`;
-            const existing = cart.find(i => i.key === key);
-
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({
-                    key,
-                    name: prod.name,
-                    variant: prod.category,
-                    size,
-                    price: prod.price,
-                    qty: 1
-                });
-            }
-
-            updateCartDrawer();
-            showToast(`${prod.name} (${size}) ditambahkan!`);
-        }
-
-        function changeItemQty(key, delta) {
-            const idx = cart.findIndex(i => i.key === key);
-            if (idx === -1) return;
-            cart[idx].qty += delta;
-            if (cart[idx].qty <= 0) cart.splice(idx, 1);
-            updateCartDrawer();
-        }
-
-        function updateCartDrawer() {
-            const count = cart.reduce((acc, i) => acc + i.qty, 0);
-            const total = cart.reduce((acc, i) => acc + i.price * i.qty, 0);
-
-            document.getElementById('cart-badge').textContent = count;
-            document.getElementById('cart-total').textContent = formatIDR(total);
-
-            const list = document.getElementById('cart-list');
-            if (cart.length === 0) {
-                list.innerHTML = `
-                    <div class="h-full flex flex-col items-center justify-center text-center py-12 space-y-2">
-                        <div class="w-14 h-14 rounded-full bg-earth-beige text-earth-wood flex items-center justify-center">
-                            <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-                        </div>
-                        <p class="font-serif text-xl font-bold text-earth-charcoal">Keranjang Masih Kosong</p>
-                        <p class="text-xs text-earth-charcoal/70 max-w-xs">Pilih koleksi gelang benang atau rancang kombinasi warna custommu terlebih dahulu.</p>
-                    </div>
-                `;
-            } else {
-                list.innerHTML = cart.map(item => `
-                    <div class="p-4 rounded-2xl bg-white border border-earth-sand flex items-start justify-between gap-3">
-                        <div class="space-y-1">
-                            <h4 class="font-bold text-sm text-earth-charcoal">${item.name}</h4>
-                            <p class="text-xs text-earth-charcoal/70">${item.variant}</p>
-                            <p class="text-xs font-semibold text-earth-moss">Ukuran: ${item.size}</p>
-                            <p class="text-sm font-bold text-earth-wood pt-0.5">${formatIDR(item.price * item.qty)}</p>
-                        </div>
-                        <div class="flex items-center gap-2 bg-earth-beige rounded-xl p-1">
-                            <button onclick="changeItemQty('${item.key}', -1)" class="w-7 h-7 rounded-lg bg-white text-earth-charcoal font-bold text-xs shadow-2xs">-</button>
-                            <span class="text-xs font-bold w-4 text-center">${item.qty}</span>
-                            <button onclick="changeItemQty('${item.key}', 1)" class="w-7 h-7 rounded-lg bg-white text-earth-charcoal font-bold text-xs shadow-2xs">+</button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-            lucide.createIcons();
-        }
-
-        function buildOrderMessage() {
-            const name = document.getElementById('order-name').value.trim();
-            const city = document.getElementById('order-city').value.trim();
-            const notes = document.getElementById('order-notes').value.trim();
-
-            if (cart.length === 0) {
-                showToast('Keranjang masih kosong! Pilih gelang dulu ya.');
-                return null;
-            }
-            if (!name || !city) {
-                showToast('Mohon isi Nama Pemesan dan Kota/Alamat terlebih dahulu.');
-                document.getElementById('order-name').focus();
-                return null;
-            }
-
-            const total = cart.reduce((acc, i) => acc + i.price * i.qty, 0);
-            let msg = `Halo kak @natercraft.id! Saya mau order gelang benang:\n\n`;
-            cart.forEach((item, idx) => {
-                msg += `${idx + 1}. ${item.name} (${item.qty} pcs)\n`;
-                msg += `   - Detail: ${item.variant}\n`;
-                msg += `   - Ukuran: ${item.size}\n`;
-                msg += `   - Subtotal: ${formatIDR(item.price * item.qty)}\n`;
-            });
-            msg += `\nTotal Estimasi: ${formatIDR(total)}\n`;
-            msg += `Nama: ${name}\n`;
-            msg += `Kota/Alamat: ${city}\n`;
-            if (notes) msg += `Catatan: ${notes}\n`;
-            msg += `\nMohon info ketersediaan & total ongkirnya ya kak. Terima kasih!`;
-            return msg;
-        }
-
-        function copyTextFallback(text) {
-            const textarea = document.createElement('textarea');
-            textarea.value = text;
-            textarea.style.position = 'fixed';
-            textarea.style.opacity = '0';
-            document.body.appendChild(textarea);
-            textarea.select();
-            try {
-                document.execCommand('copy');
-            } catch (err) {
-                // Abaikan jika browser membatasi
-            }
-            document.body.removeChild(textarea);
-        }
-
-        function checkoutInstagramDM() {
-            const msg = buildOrderMessage();
-            if (!msg) return;
-
-            copyTextFallback(msg);
-            showToast('Format pesanan tersalin! Silakan Paste di DM @natercraft.id');
-            setTimeout(() => {
-                window.open('https://www.instagram.com/natercraft.id/', '_blank');
-            }, 900);
-        }
-
-        function checkoutWhatsApp() {
-            const msg = buildOrderMessage();
-            if (!msg) return;
-
-            const waPhone = '6281234567890'; // Ganti dengan nomor WA admin Natercraft
-            window.open(`https://wa.me/${waPhone}?text=${encodeURIComponent(msg)}`, '_blank');
-        }
-
-        function toggleCart() {
-            const drawer = document.getElementById('cart-drawer');
-            const overlay = document.getElementById('cart-overlay');
-            const isHidden = drawer.classList.contains('translate-x-full');
-            if (isHidden) {
-                drawer.classList.remove('translate-x-full');
-                overlay.classList.remove('hidden');
-            } else {
-                drawer.classList.add('translate-x-full');
-                overlay.classList.add('hidden');
-            }
-        }
-
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-
-        function showToast(text) {
-            const container = document.getElementById('toast-container');
-            const el = document.createElement('div');
-            el.className = 'bg-earth-charcoal text-earth-cream px-4 py-3 rounded-2xl shadow-xl border border-earth-wood text-xs sm:text-sm font-medium flex items-center gap-2 transition-all duration-300 opacity-0 translate-y-2 pointer-events-auto';
-            el.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4 text-amber-300 shrink-0"></i><span>${text}</span>`;
-            container.appendChild(el);
-            lucide.createIcons();
-
-            requestAnimationFrame(() => el.classList.remove('opacity-0', 'translate-y-2'));
-            setTimeout(() => {
-                el.classList.add('opacity-0', 'translate-y-2');
-                setTimeout(() => el.remove(), 300);
-            }, 3000);
-        }
-
-        // --- INIT ---
-        document.addEventListener('DOMContentLoaded', () => {
-            renderHeroDaisies();
-            renderCatalog('Semua Koleksi');
-            renderThreadPalette();
-            updateCustomPreview();
-            renderHighlightSpools();
-            updateCartDrawer();
-            lucide.createIcons();
-        });
-    </script>
+    <!-- Main Application Logic -->
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
